@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acme — Landing Page</title>
+  <style>
+    :root{--accent:#2563eb;--accent-2:#0ea5a4;--bg:#f8fafc;--card:#ffffff}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; background:var(--bg); color:#0f172a; line-height:1.5}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;gap:10px;align-items:center}
+    .logo-mark{width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    nav a{margin-left:18px;text-decoration:none;color:inherit;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:28px}
+    .hero h1{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
+    .hero p{color:#334155;margin-bottom:18px}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--accent);color:#fff;text-decoration:none;font-weight:700}
+    .btn.secondary{background:transparent;border:2px solid var(--accent);color:var(--accent)}
+    .card{background:var(--card);border-radius:12px;padding:20px;box-shadow:0 6px 18px rgba(2,6,23,0.06)}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    .feature{padding:14px;border-radius:10px;background:#fbfdff;border:1px solid rgba(15,23,42,0.04)}
+    footer{margin-top:36px;padding:20px 0;color:#64748b;text-align:center}
+    /* Responsive */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .features{grid-template-columns:repeat(1,1fr)}
+    }
+    /* Anchor link highlight */
+    .anchor-target{scroll-margin-top:90px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="logo-mark">A</div>
+        <div>
+          <div style="font-weight:800">Acme</div>
+          <small style="color:#64748b">Simple product, huge impact</small>
+        </div>
+      </div>
+      <nav>
+        <!-- Anchor tag linking to the Features section below -->
+        <a href="#features" class="nav-link">Features</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="https://example.com" target="_blank" rel="noopener">Docs</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Build faster. Ship smarter.</h1>
+          <p>Acme helps teams deliver delightful products with fewer meetings and more impact. Start with a free trial and experience the difference.</p>
+          <div style="display:flex;gap:12px;align-items:center">
+            <a class="btn" id="cta-signup">Start free trial</a>
+            <!-- Anchor link that scrolls to features section -->
+            <a class="btn secondary" href="#features">Learn more</a>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3 style="margin-bottom:8px">Quick signup</h3>
+          <form id="signup-form">
+            <label style="font-size:13px;color:#334155">Email</label>
+            <input type="email" id="email" required placeholder="you@company.com" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #e6eef6" />
+            <label style="font-size:13px;color:#334155">Company (optional)</label>
+            <input type="text" id="company" placeholder="Your company" style="width:100%;padding:10px;margin:8px 0;border-radius:8px;border:1px solid #e6eef6" />
+            <button type="submit" class="btn" style="width:100%;margin-top:6px">Create account</button>
+            <p style="font-size:12px;color:#64748b;margin-top:8px">No credit card required — cancel anytime.</p>
+          </form>
+        </aside>
+      </section>
+
+      <!-- Features section (anchor target) -->
+      <section id="features" class="anchor-target">
+        <h2 style="margin-top:34px;margin-bottom:12px">Features</h2>
+        <div class="features">
+          <div class="feature">
+            <h4>Fast setup</h4>
+            <p style="font-size:14px;color:#475569">Get started in minutes with templates and smart defaults.</p>
+          </div>
+          <div class="feature">
+            <h4>Collaboration</h4>
+            <p style="font-size:14px;color:#475569">Invite teammates, share projects, and stay in sync.</p>
+          </div>
+          <div class="feature">
+            <h4>Integrations</h4>
+            <p style="font-size:14px;color:#475569">Connect to popular tools via our API and webhooks.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pricing section to demonstrate another anchor target -->
+      <section id="pricing" style="margin-top:28px">
+        <h2 style="margin-bottom:12px">Pricing</h2>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <div class="card" style="flex:1;min-width:220px">
+            <h3>Free</h3>
+            <p style="margin:8px 0">For individuals getting started.</p>
+            <p style="font-weight:800;font-size:20px">$0 / mo</p>
+            <a href="#signup" class="btn" style="margin-top:8px;display:inline-block">Get started</a>
+          </div>
+          <div class="card" style="flex:1;min-width:220px">
+            <h3>Team</h3>
+            <p style="margin:8px 0">Collaboration for growing teams.</p>
+            <p style="font-weight:800;font-size:20px">$12 / user</p>
+            <a href="#signup" class="btn" style="margin-top:8px;display:inline-block">Buy now</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="signup" style="margin-top:28px">
+        <h2>Join thousands of teams</h2>
+        <p style="color:#475569">Sign up and get access to all features for 14 days.</p>
+      </section>
+
+    </main>
+
+    <footer>
+      <small>© Acme — Built with ♥ • <a href="#features">Jump to features</a></small>
+    </footer>
+  </div>
+
+  <script>
+    // Small JS to handle the signup form and CTA behavior
+    document.getElementById('signup-form').addEventListener('submit', function(e){
+      e.preventDefault();
+      var email = document.getElementById('email').value.trim();
+      if(!email){alert('Please enter an email.');return}
+      // For demo: show a friendly confirmation and clear form
+      alert('Thanks! A confirmation email will be sent to ' + email);
+      document.getElementById('email').value = '';
+      document.getElementById('company').value = '';
+    });
+
+    // Smooth scroll for in-page anchor links (enhancement)
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor){
+      anchor.addEventListener('click', function(e){
+        var target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    // CTA signup button scrolls to signup section
+    document.getElementById('cta-signup').addEventListener('click', function(){
+      var t = document.getElementById('signup');
+      t.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  </script>
+</body>
+</html>
